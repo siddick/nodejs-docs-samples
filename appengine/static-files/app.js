@@ -24,6 +24,7 @@ app.set('view engine', 'pug');
 app.use('/static', express.static('public'));
 
 app.get('/', (req, res) => {
+  res.set('Cache-Control', 'public, max-age=600');
   res.render('index');
 });
 
